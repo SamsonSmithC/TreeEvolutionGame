@@ -72,7 +72,30 @@ namespace TreeEvolutionGame {
             int t_infiniteSavior = 0;
             while (t_nextEncounter != null)
             {
-                Debug.Log($"{t_nextEncounter.Name} had a chance of {t_nextEncounter.CalculatedChance}");
+                switch(t_nextEncounter.Tag)
+                {
+                    case Encounters.Human_Loggers:
+                        treeManager.Damage(10);
+                        break;
+                    case Encounters.Insect_TermitesEating:
+                        treeManager.ReduceDef(5);
+                        treeManager.Damage(5);
+                        ApplyModByTag(Encounters.Bird_Woodpeckers, 0.2f);
+                        break;
+                    case Encounters.Bird_Woodpeckers:
+                        treeManager.PierceDamage(10);
+                        ApplyModByTag(Encounters.Insect_TermitesEating, -0.2f);
+                        ApplyModByTag(Encounters.Insect_BeetlesPollinating, -0.2f);
+                        ApplyModByTag(Encounters.Fungi_Decay, 0.2f);
+                        break;
+                    case Encounters.Insect_BeetlesPollinating:
+                        treeManager.RegenUp(2);
+                        ApplyModByTag(Encounters.Bird_Woodpeckers, 0.2f);
+                        ApplyModByTag(Encounters.Fungi_Decay, 0.2f);
+                        break;
+                    default:
+                        break;
+                }
                 t_nextEncounter = NextEncounter;
                 if  (++t_infiniteSavior > 1000)
                 {
@@ -80,6 +103,17 @@ namespace TreeEvolutionGame {
                     break;
                 }
             }
+        }
+
+        public void ApplyModByTag(Encounters tag, float modDelta)
+        {
+            for (int i = 0; i < m_possibleEncounters.Count; ++i)
+                {
+                    if (m_possibleEncounters[i].Tag == tag)
+                    {
+                        m_possibleEncounters[i].modifier += modDelta;
+                    }
+                }
         }
 
         /// <summary>

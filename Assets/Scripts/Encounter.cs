@@ -10,6 +10,9 @@ namespace TreeEvolutionGame
 
         public Tier Tier {get; private set;} = Tier.Insignificant;
 
+        public float modifier = 0f;
+
+        public Encounters Tag => m_data.Tag;
         EncounterDataSO m_data;
 
         public bool IsOngoing => false;
@@ -30,6 +33,6 @@ namespace TreeEvolutionGame
 
         public float BaseChance => m_data.Chance;
 
-        public float CalculatedChance { get { return m_data.Chance; } }
+        public float CalculatedChance { get { return m_data.Chance + modifier; } }
     }
 }

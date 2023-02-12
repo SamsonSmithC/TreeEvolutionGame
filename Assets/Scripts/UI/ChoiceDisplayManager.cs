@@ -27,6 +27,13 @@ namespace TreeEvolutionGame {
         [SerializeField]
         private List<Sprite> m_icons = null;
 
+        private SoundManager m_soundMan = null;
+
+        private void Start()
+        {
+            m_soundMan = SoundManager.Instance;
+        }
+
         public void SetCost (int cost) {
             m_costRenderer.sprite = m_numberSprites.numbers[cost];
         }
@@ -52,6 +59,8 @@ namespace TreeEvolutionGame {
         void OnMouseEnter()
         {
             m_selctionIndicator.enabled = true;
+
+            m_soundMan.PlayMouseOverSound();
         }
 
         /// <summary>

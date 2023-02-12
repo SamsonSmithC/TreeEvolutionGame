@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5321bfa7ae255d4cbb25da39686bfab, type: 3}
+  m_Name: Human Loggers
+  m_EditorClassIdentifier: 
+  m_name: Human Loggers
+  m_minGrowthStage: 0
+  m_maxGrowthStage: 2147483647
+  m_chance: 0.5
+  m_description: Human loggers have arrived to harvest your wood!
+  m_increaseChanceMessage: The humans are temped to return soon after such a large
+    harvest.
+  m_unchangedChanceMessage: The humans leave with their harvest.
+  m_decreaseChanceMessage: The humans are disappointed by their small harvest. They
+    may return less often.
+  m_isTypeOngoing: 0
+  m_endChance: 0
+  m_firstDescription: 
+  m_increaseEndChanceMessage: 
+  m_unchangedEndChanceMessage: 
+  m_decreaseEndChanceMessage: 

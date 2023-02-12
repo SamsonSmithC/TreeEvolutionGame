@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81093159059b0c44a86477061abb97e0, type: 3}
+  m_Name: Nutritious Remains
+  m_EditorClassIdentifier: 
+  m_type: 1
+  m_name: Nutritious Remains
+  m_cost: 1
+  m_mutationEffects:
+  - m_affectedTag: 13
+    m_effectType: 8

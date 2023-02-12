@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5321bfa7ae255d4cbb25da39686bfab, type: 3}
   m_Name: Human Loggers
   m_EditorClassIdentifier: 
+  m_tag: 1
   m_name: Human Loggers
   m_minGrowthStage: 0
   m_maxGrowthStage: 2147483647

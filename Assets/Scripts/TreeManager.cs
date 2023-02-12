@@ -23,6 +23,27 @@ namespace TreeEvolutionGame {
     // The stage of growth to display the tree at.
     public int GrowthStage {get; private set;} = 0;
 
+    [SerializeField]
+    private GameObject HealthBarFill = null;
+    private float HealthFullScale = 0f;
+
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    private void Start()
+    {
+        HealthFullScale = HealthBarFill.transform.localScale.y;
+    }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    private void Update()
+    {
+        HealthBarFill.transform.localScale = new Vector3 (4, HealthFullScale*(Health/100f), 1);
+    }
+
 
     private void DoTreeTick()
     {
@@ -31,7 +52,7 @@ namespace TreeEvolutionGame {
             // Game Over.
             Debug.LogError("The game should be ended right now...");
         }
-        
+
         Health += HealthRegen;
         if (Health > 100) { Health = 100; }
 

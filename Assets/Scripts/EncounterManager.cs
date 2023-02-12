@@ -114,7 +114,7 @@ namespace TreeEvolutionGame {
         /// </summary>
         static void Randomize<T>(List<T> list) {
             for(int i = 0; i < list.Count; ++i) {
-                Swap<T>(list, i, RandomNumberGenerator.GetInt32(list.Count - 2) + 1);
+                Swap<T>(list, i, RandomNumberGenerator.GetInt32(list.Count - 1) + 1);
             }
         }
 

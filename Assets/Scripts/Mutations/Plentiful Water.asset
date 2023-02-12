@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81093159059b0c44a86477061abb97e0, type: 3}
   m_Name: Plentiful Water
   m_EditorClassIdentifier: 
+  m_type: 2
   m_name: Plentiful Water
+  m_cost: 1
   m_mutationEffects:
   - m_affectedTag: 13
-    m_effectType: 6
-  - m_affectedTag: 13
-    m_effectType: 8
+    m_effectType: 12

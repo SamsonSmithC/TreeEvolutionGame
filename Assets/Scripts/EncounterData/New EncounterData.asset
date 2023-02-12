@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5321bfa7ae255d4cbb25da39686bfab, type: 3}
+  m_Name: New EncounterData
+  m_EditorClassIdentifier: 
+  m_tag: 4
+  m_name: Termite Infestation
+  m_minGrowthStage: 0
+  m_maxGrowthStage: 2147483647
+  m_chance: 0
+  m_description: Termites eat away at your bark.
+  m_increaseChanceMessage: 
+  m_unchangedChanceMessage: 
+  m_decreaseChanceMessage: 
+  m_isTypeOngoing: 0
+  m_endChance: 0
+  m_firstDescription: 
+  m_increaseEndChanceMessage: 
+  m_unchangedEndChanceMessage: 
+  m_decreaseEndChanceMessage: 

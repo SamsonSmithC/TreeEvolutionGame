@@ -23,6 +23,7 @@ namespace TreeEvolutionGame {
     // The stage of growth to display the tree at.
     public int GrowthStage {get; private set;} = 0;
 
+    
     [SerializeField]
     private GameObject HealthBarFill = null;
     private float HealthFullScale = 0f;
@@ -34,6 +35,27 @@ namespace TreeEvolutionGame {
     private void Start()
     {
         HealthFullScale = HealthBarFill.transform.localScale.y;
+    }
+
+    public void Damage(int damage)
+    {
+        if (damage > Defense) {Health -= (damage-Defense);}
+    }
+
+    public void ReduceDef(int red)
+    {
+        Defense -= red;
+        if (Defense < 0) {Defense = 0;}
+    }
+
+    public void PierceDamage(int dmg)
+    {
+        Health -= dmg;
+    }
+
+    public void RegenUp(int regUp)
+    {
+        HealthRegen += regUp;
     }
 
     /// <summary>

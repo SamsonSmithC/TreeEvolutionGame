@@ -193,8 +193,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -243690019
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -61240414, guid: 8a8f3fe53a0453e4795c57f81e509289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -399,6 +399,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
+      propertyPath: m_selIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
+      propertyPath: m_holderMan
+      value: 
+      objectReference: {fileID: 767649023}
+    - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
       propertyPath: m_selctionIndicator
       value: 
       objectReference: {fileID: 171461031}
@@ -528,7 +536,6 @@ GameObject:
   - component: {fileID: 370578339}
   - component: {fileID: 370578342}
   - component: {fileID: 370578340}
-  - component: {fileID: 370578343}
   m_Layer: 5
   m_Name: Choice01
   m_TagString: Untagged
@@ -599,7 +606,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 974850455}
+        m_TargetAssemblyTypeName: TreeEvolutionGame.SoundManager, Assembly-CSharp
+        m_MethodName: PlaySelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &370578342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -608,26 +627,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370578338}
   m_CullTransparentMesh: 1
---- !u!95 &370578343
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370578338}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 505f4a08ddd1d724f8c8ac4cc0579ce0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &379347099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -875,10 +874,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.029064488
-    y: 0.15175097
-    width: 0.52316076
-    height: 0.6303502
+    x: 0.15077204
+    y: 0.079766534
+    width: 0.6975477
+    height: 0.8404669
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1021,7 +1020,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000dd9579f1
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1147,6 +1146,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
+      propertyPath: m_selIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
+      propertyPath: m_holderMan
+      value: 
+      objectReference: {fileID: 767649023}
+    - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
       propertyPath: m_selctionIndicator
       value: 
       objectReference: {fileID: 1671502274}
@@ -1172,6 +1179,7 @@ GameObject:
   - component: {fileID: 767649020}
   - component: {fileID: 767649022}
   - component: {fileID: 767649021}
+  - component: {fileID: 767649023}
   m_Layer: 0
   m_Name: IconHolder
   m_TagString: Untagged
@@ -1237,6 +1245,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &767649023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767649019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab2c1433ea22734c936349b4f3651b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rootAnimator: {fileID: 1035965989}
 --- !u!1 &816794985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,8 +1328,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -243690019
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -493304468, guid: 8a8f3fe53a0453e4795c57f81e509289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1514,6 +1535,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0415b3e2f2733ed4292a18535d55c635, type: 3}
+--- !u!114 &974850455 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 628093947015715457, guid: 0415b3e2f2733ed4292a18535d55c635, type: 3}
+  m_PrefabInstance: {fileID: 974850454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746ce414e7c38e14aa0b6d568bb8cb0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1035965988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,10 +1630,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.5, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1035965991
@@ -1612,7 +1644,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035965988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.59, z: -1}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1784,7 +1816,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 974850455}
+        m_TargetAssemblyTypeName: TreeEvolutionGame.SoundManager, Assembly-CSharp
+        m_MethodName: PlaySelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1174344688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1892,7 +1936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1507067870
 Transform:
   m_ObjectHideFlags: 0
@@ -2140,8 +2184,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -243690019
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -61240414, guid: 8a8f3fe53a0453e4795c57f81e509289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2235,7 +2279,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 974850455}
+        m_TargetAssemblyTypeName: TreeEvolutionGame.SoundManager, Assembly-CSharp
+        m_MethodName: PlaySelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1838306819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2375,8 +2431,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -243690019
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -357451919, guid: 8a8f3fe53a0453e4795c57f81e509289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2585,6 +2641,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
+      propertyPath: m_holderMan
+      value: 
+      objectReference: {fileID: 767649023}
     - target: {fileID: 6839649240052239189, guid: 364d291f26759c74ca99c373808b4bb3, type: 3}
       propertyPath: m_selctionIndicator
       value: 

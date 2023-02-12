@@ -5,6 +5,9 @@ using UnityEngine;
 namespace TreeEvolutionGame {
     public class ChoiceDisplayManager : MonoBehaviour
     {
+        [SerializeField] private IconHolderManager m_holderMan = null;
+        [SerializeField] private int m_selIndex = 0;
+
         [SerializeField]
         IntSpriteDictionary m_numberSprites = null;
 
@@ -61,6 +64,8 @@ namespace TreeEvolutionGame {
             m_selctionIndicator.enabled = true;
 
             m_soundMan.PlayMouseOverSound();
+
+            m_holderMan.SetSelected(m_selIndex);
         }
 
         /// <summary>
@@ -69,6 +74,12 @@ namespace TreeEvolutionGame {
         void OnMouseExit()
         {
             m_selctionIndicator.enabled = false;
+
+            m_holderMan.SetSelected(-1);
+        }
+        private void OnMouseDown()
+        {
+            m_soundMan.PlaySelectSound();
         }
 
         Sprite GetLabel(MutationType type) {
